@@ -2,30 +2,32 @@
 
 A data science project to analyze phishing website characteristics and build a machine-learning based phishing risk detector.
 
+---
+
 ## 🔎 Project Overview
 
-- Based on a public phishing URL dataset (~11,000 URLs with 30+ URL/webpage features + label: phishing or legitimate).  
-- Perform **Exploratory Data Analysis (EDA)** to uncover patterns that differentiate malicious vs legitimate URLs.  
-- Use **statistical hypothesis testing** (T-test, Chi-square) to verify which features are significantly associated with phishing.  
-- Build and evaluate a **Logistic Regression classifier** (with class balancing) to predict phishing risk.  
-- Compare with **Random Forest** to examine performance vs interpretability trade-offs.  
-- Provide a **risk-scoring scheme** (Low / Medium / High) based on model probabilities — practical for real-world use.
+Many phishing attacks exploit URL and webpage characteristics to trick users (e.g. long URLs, suspicious anchors, SSL issues, sub-domains).  
+This project leverages a public dataset of ~11,000 websites (phishing and legitimate) and performs:
 
-## 📊 Key Results (sample — update with your final values)
+- Exploratory Data Analysis (EDA) to uncover distinguishing patterns  
+- Statistical hypothesis testing (t-test, chi-square) to validate significant risk-indicating features  
+- A classification pipeline using Logistic Regression (with class balancing) to predict phishing risk  
+- Comparison with a Random Forest model to evaluate performance vs interpretability  
+- A simple phishing **risk scoring scheme** (Low / Medium / High) based on model probability — suitable for real-world use
 
-| Metric       | Logistic Regression | Random Forest  |
-|--------------|---------------------|----------------|
-| Accuracy     | 93 %                | 96 %           |
-| Recall       | 92 %                | 97 %           |
-| ROC-AUC      | 0.95                | 0.99           |
+---
 
-> **Important insight**: Features such as `URL_of_Anchor`, `Prefix_Suffix`, and `SSLfinal_State` are strong risk indicators — aligns with known phishing heuristics (suspicious anchor links, domain irregularities, certificate issues).
+## 📁 Repository Structure
+
+- `phishing_website_analysis.ipynb` — Main Jupyter/Colab notebook (data loading, EDA, stats tests, modeling, evaluation, risk scoring)  
+- `requirements.txt` — Python dependencies required to run the notebook  
+- `README.md` — Project documentation  
+
+---
 
 ## 🚀 How to Run
 
-1. Clone or download this repository.  
-2. Ensure you have Python environment with dependencies:  
+1. Download / clone this repository  
+2. Install dependencies:  
    ```bash
    pip install -r requirements.txt
-
-
